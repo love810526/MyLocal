@@ -26,10 +26,8 @@ public class OddOccurrencesInArray {
 			} else {
 				result.add(number);
 			}
-
 		}
 		int finalOutput = SetToInt(result);
-
 		return finalOutput;
 	}
 
