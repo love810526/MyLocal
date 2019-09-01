@@ -9,9 +9,10 @@ public class Fibonacci {
 
 		System.out.println("Enter a number: ");
 		number = scanner.nextInt();
-
-		int result = calculate(number);
-		System.out.println("Result:" + result);
+		int loop = calculate(number);
+		int result = recursive(number);
+		System.out.println("Result loop:" + loop);
+		System.out.println("Result recursive:" + result);
 
 	}
 
@@ -28,6 +29,13 @@ public class Fibonacci {
 			rel = tt; 
 		}
 		return rel[n];
+	}
+	
+	public static int recursive(int n) {
+		if (n < 0) {
+			return 0;
+		}
+		return (n==0 || n==1) ? 1 : ( recursive(n-1) + recursive(n-2) );
 	}
 
 }
