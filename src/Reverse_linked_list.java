@@ -58,4 +58,29 @@ class Reverse_linked_list {
 		System.out.println("Reversed linked list ");
 		list.printList(head);
 	}
+
+	/* Definition for singly-linked list. */
+	public class ListNode {
+		int val;
+		ListNode next;
+
+		ListNode(int x) {
+			val = x;
+		}
+	}
+
+	public static ListNode reverseList(ListNode head) {
+		ListNode prev = null;
+		ListNode curr = head;
+		while (curr != null) {
+			ListNode temp = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = temp;
+		}
+
+		head = prev;
+		return head;
+	}
+
 }
